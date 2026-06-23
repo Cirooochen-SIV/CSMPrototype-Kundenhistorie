@@ -349,14 +349,17 @@ html, body, #root {
 .nav-icon-wrap--app {
   width: 24px;
   height: 24px;
-  background: var(--product-inbound);
+  background: var(--product-csm);
   border-radius: var(--radius-sm);
   flex-shrink: 0;
 }
 .nav-icon-wrap--app .icon {
-  font-size: 14px;
+  font-size: 16px;
   color: #fff;
   font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+}
+.nav-app-selector .nav-icon-wrap--app .nav-dot {
+  border-color: var(--surface-container-primary);
 }
 
 /* Notification dot badge */
@@ -387,25 +390,6 @@ html, body, #root {
   justify-content: center;
   gap: 0;
   position: relative;
-}
-
-/* App selector in collapsed: full 40×40 colored block, no card chrome */
-.sidebar--collapsed .nav-app-selector {
-  background: none;
-  border: none;
-  padding: 0;
-}
-.sidebar--collapsed .nav-icon-wrap--app {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-md);
-  background: var(--product-inbound);
-}
-.sidebar--collapsed .nav-icon-wrap--app .icon {
-  font-size: 20px;
-}
-.sidebar--collapsed .nav-icon-wrap--app .nav-dot {
-  border-color: var(--surface-secondary);
 }
 
 /* Profile button in collapsed: avatar only */
