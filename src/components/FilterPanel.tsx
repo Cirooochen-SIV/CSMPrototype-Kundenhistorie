@@ -7,6 +7,7 @@ export interface FilterState {
 }
 
 const EVENT_TYPE_OPTIONS = [
+  'Vertragswechsel',
   'Rechnungserstellung',
   'Zahlstände',
   'Mahnlauf',
@@ -38,7 +39,6 @@ export function FilterPanel({ filters, onChange, onClose }: Props) {
         onClose();
       }
     };
-    // Delay to avoid the opening click from immediately closing
     const timer = setTimeout(() => document.addEventListener('mousedown', handleClick), 0);
     return () => { clearTimeout(timer); document.removeEventListener('mousedown', handleClick); };
   }, [onClose]);
@@ -71,41 +71,50 @@ export function FilterPanel({ filters, onChange, onClose }: Props) {
         <span className="filter-panel__title">
           Filters{activeCount > 0 && <span className="filter-panel__count"> ({activeCount})</span>}
         </span>
-        {activeCount > 0 && (
-          <button className="filter-panel__clear" onClick={clearAll}>Alle löschen</button>
-        )}
+        <button className="filter-panel__clear" onClick={clearAll}>Alle löschen</button>
       </div>
 
       <div className="filter-panel__section">
         <p className="filter-panel__section-label">Event type</p>
-        {EVENT_TYPE_OPTIONS.map(type => (
-          <label key={type} className="filter-panel__option">
-            <input
-              type="checkbox"
-              className="filter-panel__checkbox"
-              checked={filters.eventTypes.has(type)}
-              onChange={() => toggleEventType(type)}
-            />
-            <span className="filter-panel__option-text">{type}</span>
-          </label>
-        ))}
+        {EVENT_TYPE_OPTIONS.map(type => {
+          const checked = filters.eventTypes.has(type);
+          return (
+            <button
+              key={type}
+              type="button"
+              className="filter-panel__option"
+              onClick={() => toggleEventType(type)}
+              aria-pressed={checked}
+            >
+              <span className={`icon filter-panel__check-icon${checked ? ' filter-panel__check-icon--checked' : ''}`}>
+                {checked ? 'check_box' : 'check_box_outline_blank'}
+              </span>
+              <span className="filter-panel__option-text">{type}</span>
+            </button>
+          );
+        })}
       </div>
 
       <div className="filter-panel__section">
         <p className="filter-panel__section-label">Entry type</p>
-        {ENTRY_TYPE_OPTIONS.map(type => (
-          <label key={type} className="filter-panel__option">
-            <input
-              type="checkbox"
-              className="filter-panel__checkbox"
-              checked={filters.entryTypes.has(type)}
-              onChange={() => toggleEntryType(type)}
-            />
-            <span className="filter-panel__option-text">{type}</span>
-          </label>
-        ))}
+        {ENTRY_TYPE_OPTIONS.map(type => {
+          const checked = filters.entryTypes.has(type);
+          return (
+            <button
+              key={type}
+              type="button"
+              className="filter-panel__option"
+              onClick={() => toggleEntryType(type)}
+              aria-pressed={checked}
+            >
+              <span className={`icon filter-panel__check-icon${checked ? ' filter-panel__check-icon--checked' : ''}`}>
+                {checked ? 'check_box' : 'check_box_outline_blank'}
+              </span>
+              <span className="filter-panel__option-text">{type}</span>
+            </button>
+          );
+        })}
       </div>
-
     </div>
   );
 }

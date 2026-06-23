@@ -13,6 +13,109 @@ const LABEL_COLORS: Record<string, LabelChip['color']> = {
   'VIP': 'label-blue',
 };
 
+interface CustomSelectProps {
+  id: string;
+  label: string;
+  value: string;
+  onChange: (val: string) => void;
+  options: string[];
+  required?: boolean;
+  error?: boolean;
+  errorId?: string;
+}
+
+function CustomSelect({ id, label, value, onChange, options, required, error, errorId }: CustomSelectProps) {
+  const [open, setOpen] = useState(false);
+  const wrapRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, []);
+
+  const hasValue = value !== '';
+  const labelUp = hasValue || open;
+
+  const labelClass = [
+    'dialog-field__float-label',
+    labelUp ? 'dialog-field__float-label--up' : '',
+    open && !error ? 'dialog-field__float-label--focus' : '',
+    error ? 'dialog-field__float-label--error' : '',
+  ].filter(Boolean).join(' ');
+
+  const selectClass = [
+    'dialog-field__custom-select',
+    open ? 'dialog-field__custom-select--open' : '',
+    error ? 'dialog-field__custom-select--error' : '',
+  ].filter(Boolean).join(' ');
+
+  return (
+    <div className="dialog-field__float-wrap" ref={wrapRef}>
+      <div
+        id={id}
+        className={selectClass}
+        role="combobox"
+        aria-expanded={open}
+        aria-haspopup="listbox"
+        aria-controls={`${id}-listbox`}
+        aria-describedby={error && errorId ? errorId : undefined}
+        tabIndex={0}
+        onClick={() => setOpen(o => !o)}
+        onKeyDown={e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOpen(o => !o); }
+          if (e.key === 'Escape') setOpen(false);
+          if (e.key === 'ArrowDown' && !open) setOpen(true);
+        }}
+      >
+        <span className={`dialog-field__custom-select-value${!hasValue ? ' dialog-field__custom-select-value--placeholder' : ''}`}>
+          {hasValue ? value : 'Keine Auswahl'}
+        </span>
+        <span className={`icon dialog-field__custom-select-arrow${open ? ' dialog-field__custom-select-arrow--open' : ''}`}>
+          arrow_drop_down
+        </span>
+      </div>
+      <label className={labelClass} htmlFor={id}>
+        {label}{required && <span className="dialog-field__required"> *</span>}
+      </label>
+      {open && (
+        <ul
+          id={`${id}-listbox`}
+          className="dialog-field__custom-dropdown"
+          role="listbox"
+          aria-label={label}
+        >
+          <li
+            className="dialog-field__custom-dropdown-item"
+            role="option"
+            aria-selected={!hasValue}
+            onClick={() => { onChange(''); setOpen(false); }}
+          >
+            <span className="dialog-field__custom-dropdown-text">Keine Auswahl</span>
+            {!hasValue && <span className="icon dialog-field__custom-dropdown-check">check</span>}
+          </li>
+          {options.map(opt => (
+            <li
+              key={opt}
+              className="dialog-field__custom-dropdown-item"
+              role="option"
+              aria-selected={value === opt}
+              onClick={() => { onChange(opt); setOpen(false); }}
+            >
+              <span className="dialog-field__custom-dropdown-text">{opt}</span>
+              {value === opt && <span className="icon dialog-field__custom-dropdown-check">check</span>}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
 interface Props {
   onClose: () => void;
   onSubmit: (event: CustomerEvent) => void;
@@ -151,27 +254,16 @@ export function NewEntryDialog({ onClose, onSubmit }: Props) {
 
             {/* Kategorie */}
             <div className="dialog-field">
-              <div className="dialog-field__float-wrap">
-                <select
-                  id="dialog-kategorie"
-                  className={`dialog-field__select${kategorieError ? ' dialog-field__select--error' : ''}`}
-                  value={kategorie}
-                  onChange={e => setKategorie(e.target.value)}
-                  aria-describedby={kategorieError ? 'dialog-kategorie-error' : undefined}
-                >
-                  <option value="" disabled />
-                  {KATEGORIE_OPTIONS.map(opt => (
-                    <option key={opt} value={opt}>{opt}</option>
-                  ))}
-                </select>
-                <label
-                  className={`dialog-field__float-label${kategorie ? ' dialog-field__float-label--up' : ''}`}
-                  htmlFor="dialog-kategorie"
-                >
-                  Kategorie <span className="dialog-field__required">*</span>
-                </label>
-                <span className="icon dialog-field__select-icon">arrow_drop_down</span>
-              </div>
+              <CustomSelect
+                id="dialog-kategorie"
+                label="Kategorie"
+                value={kategorie}
+                onChange={setKategorie}
+                options={KATEGORIE_OPTIONS}
+                required
+                error={kategorieError}
+                errorId="dialog-kategorie-error"
+              />
               {kategorieError && <p id="dialog-kategorie-error" className="dialog-field__error">Bitte wählen Sie eine Kategorie aus.</p>}
             </div>
 
@@ -234,26 +326,13 @@ export function NewEntryDialog({ onClose, onSubmit }: Props) {
 
             {/* Lieferstelle */}
             <div className="dialog-field">
-              <div className="dialog-field__float-wrap">
-                <select
-                  id="dialog-lieferstelle"
-                  className="dialog-field__select"
-                  value={lieferstelle}
-                  onChange={e => setLieferstelle(e.target.value)}
-                >
-                  <option value="" disabled />
-                  {LIEFERSTELLE_OPTIONS.map(opt => (
-                    <option key={opt} value={opt}>{opt}</option>
-                  ))}
-                </select>
-                <label
-                  className={`dialog-field__float-label${lieferstelle ? ' dialog-field__float-label--up' : ''}`}
-                  htmlFor="dialog-lieferstelle"
-                >
-                  Lieferstelle
-                </label>
-                <span className="icon dialog-field__select-icon">arrow_drop_down</span>
-              </div>
+              <CustomSelect
+                id="dialog-lieferstelle"
+                label="Lieferstelle"
+                value={lieferstelle}
+                onChange={setLieferstelle}
+                options={LIEFERSTELLE_OPTIONS}
+              />
             </div>
 
           </div>

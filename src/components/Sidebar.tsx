@@ -55,12 +55,12 @@ export function Sidebar() {
         {/* Nav */}
         <nav className="sidebar-nav">
           {/* App selector */}
-          <div className="nav-item nav-app-selector" role="button" tabIndex={0} data-tooltip="Inbound Management">
+          <div className="nav-item nav-app-selector" role="button" tabIndex={0} data-tooltip="CSM">
             <div className="nav-icon-wrap nav-icon-wrap--app">
-              <span className="icon">mail</span>
+              <span className="icon">headset_mic</span>
               <span className="nav-dot" aria-hidden="true" />
             </div>
-            <span className="nav-label">Inbound Management</span>
+            <span className="nav-label">CSM</span>
             <span className="icon nav-extra">unfold_more</span>
           </div>
 

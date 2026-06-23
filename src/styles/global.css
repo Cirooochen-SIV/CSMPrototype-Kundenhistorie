@@ -1013,7 +1013,6 @@ html, body, #root {
   justify-content: space-between;
   height: 48px;
   padding: 0 16px;
-  border-bottom: 1px solid var(--outline-secondary);
   position: sticky;
   top: 0;
   background: var(--surface-container-high);
@@ -1077,29 +1076,35 @@ html, body, #root {
   border-radius: var(--radius-sm);
   padding: 0 12px;
   margin: 0 4px;
+  width: calc(100% - 8px);
+  background: none;
+  border: none;
+  font-family: var(--font-family);
+  text-align: left;
 }
 
 .filter-panel__option:hover {
   background: var(--surface-container-high-hover);
 }
 
-.filter-panel__option:hover .filter-panel__option-text {
-  font-weight: 600;
+.filter-panel__check-icon {
+  font-size: 20px;
+  line-height: 20px;
+  flex-shrink: 0;
+  color: var(--on-surface-high-secondary);
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
-.filter-panel__checkbox {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  accent-color: var(--accent-primary);
-  cursor: pointer;
+.filter-panel__check-icon--checked {
+  color: var(--accent-primary);
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
 .filter-panel__option-text {
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
-  color: var(--on-surface-secondary);
+  color: var(--on-surface-high);
 }
 
 .event-list__empty {
@@ -1476,7 +1481,8 @@ html, body, #root {
 /* Floated state — focused → accent-primary label */
 .dialog-field__input:focus + .dialog-field__float-label,
 .dialog-field__textarea:focus + .dialog-field__float-label--ta,
-.dialog-field__select:focus + .dialog-field__float-label {
+.dialog-field__select:focus + .dialog-field__float-label,
+.dialog-field__float-label--focus {
   top: 0;
   transform: translateY(-50%);
   font-size: 10px;
@@ -1489,7 +1495,8 @@ html, body, #root {
 /* Error state — label turns semantics-error */
 .dialog-field__input--error + .dialog-field__float-label,
 .dialog-field__textarea--error + .dialog-field__float-label--ta,
-.dialog-field__select--error + .dialog-field__float-label {
+.dialog-field__select--error + .dialog-field__float-label,
+.dialog-field__float-label--error {
   color: var(--semantics-error);
 }
 
@@ -1672,6 +1679,115 @@ html, body, #root {
   line-height: 1;
   color: var(--on-surface-tertiary);
   pointer-events: none;
+}
+
+/* Custom select */
+.dialog-field__custom-select {
+  height: 48px;
+  padding: 0 40px 0 16px;
+  border: 1px solid var(--outline-primary);
+  border-radius: var(--radius-md);
+  background: var(--surface-container-primary);
+  font-family: var(--font-family);
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: var(--on-surface-secondary);
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: background-color 0.15s, border-color 0.15s, border-width 0.15s;
+  outline: none;
+  user-select: none;
+}
+
+.dialog-field__custom-select:hover {
+  background: var(--surface-container-primary-hover);
+}
+
+.dialog-field__custom-select--open,
+.dialog-field__custom-select:focus {
+  border-color: var(--accent-primary);
+  border-width: 2px;
+  background: var(--surface-container-primary);
+}
+
+.dialog-field__custom-select--error {
+  border-color: var(--semantics-error);
+  border-width: 2px;
+}
+
+.dialog-field__custom-select-value {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dialog-field__custom-select-value--placeholder {
+  color: var(--on-surface-tertiary);
+}
+
+.dialog-field__custom-select-arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  line-height: 1;
+  color: var(--on-surface-tertiary);
+  pointer-events: none;
+  transition: transform 0.15s;
+}
+
+.dialog-field__custom-select-arrow--open {
+  transform: translateY(-50%) rotate(180deg);
+  color: var(--accent-primary);
+}
+
+.dialog-field__custom-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--surface-container-high);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 8px -4px #0a0d1299, 0 2px 2px -1px #0a0d120a;
+  z-index: 50;
+  padding: 4px;
+  list-style: none;
+  margin: 0;
+}
+
+.dialog-field__custom-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: var(--on-surface-secondary);
+}
+
+.dialog-field__custom-dropdown-item:hover {
+  background: var(--surface-container-high-hover);
+}
+
+.dialog-field__custom-dropdown-text {
+  flex: 1;
+}
+
+.dialog-field__custom-dropdown-check {
+  font-size: 20px;
+  color: var(--on-surface-high);
+  flex-shrink: 0;
 }
 
 /* Labels field */

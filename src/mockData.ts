@@ -6,7 +6,7 @@ export const mockEvents: CustomerEvent[] = [
     date: 'Heute',
     time: '14:23 Uhr',
     source: 'kVASy',
-    type: 'Rechnungserstellung',
+    type: 'Vertragswechsel',
     icon: 'database',
     title: 'Tarifwechsel auf „ÖkoStrom Aktiv" zum 01.05.2026 abgeschlossen.',
     description:
