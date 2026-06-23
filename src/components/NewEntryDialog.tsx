@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import { CustomerEvent, LabelChip } from '../types';
 
 const KATEGORIE_OPTIONS = ['Anruf', 'Notiz', 'Übereinstimmung'];
@@ -26,17 +27,29 @@ interface CustomSelectProps {
 
 function CustomSelect({ id, label, value, onChange, options, required, error, errorId }: CustomSelectProps) {
   const [open, setOpen] = useState(false);
+  const [dropdownPos, setDropdownPos] = useState({ top: 0, left: 0, width: 0 });
   const wrapRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
-      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) {
-        setOpen(false);
-      }
+      const target = e.target as Node;
+      const inTrigger = wrapRef.current?.contains(target);
+      const inDropdown = dropdownRef.current?.contains(target);
+      if (!inTrigger && !inDropdown) setOpen(false);
     };
     document.addEventListener('mousedown', handleClick);
     return () => document.removeEventListener('mousedown', handleClick);
   }, []);
+
+  const handleToggle = () => {
+    if (!open && triggerRef.current) {
+      const rect = triggerRef.current.getBoundingClientRect();
+      setDropdownPos({ top: rect.bottom + 4, left: rect.left, width: rect.width });
+    }
+    setOpen(o => !o);
+  };
 
   const hasValue = value !== '';
   const labelUp = hasValue || open;
@@ -54,9 +67,43 @@ function CustomSelect({ id, label, value, onChange, options, required, error, er
     error ? 'dialog-field__custom-select--error' : '',
   ].filter(Boolean).join(' ');
 
+  const dropdown = (
+    <ul
+      ref={dropdownRef}
+      id={`${id}-listbox`}
+      className="dialog-field__custom-dropdown"
+      style={{ position: 'fixed', top: dropdownPos.top, left: dropdownPos.left, width: dropdownPos.width, zIndex: 1100 }}
+      role="listbox"
+      aria-label={label}
+    >
+      <li
+        className="dialog-field__custom-dropdown-item"
+        role="option"
+        aria-selected={!hasValue}
+        onClick={() => { onChange(''); setOpen(false); }}
+      >
+        <span className="dialog-field__custom-dropdown-text">Keine Auswahl</span>
+        {!hasValue && <span className="icon dialog-field__custom-dropdown-check">check</span>}
+      </li>
+      {options.map(opt => (
+        <li
+          key={opt}
+          className="dialog-field__custom-dropdown-item"
+          role="option"
+          aria-selected={value === opt}
+          onClick={() => { onChange(opt); setOpen(false); }}
+        >
+          <span className="dialog-field__custom-dropdown-text">{opt}</span>
+          {value === opt && <span className="icon dialog-field__custom-dropdown-check">check</span>}
+        </li>
+      ))}
+    </ul>
+  );
+
   return (
     <div className="dialog-field__float-wrap" ref={wrapRef}>
       <div
+        ref={triggerRef}
         id={id}
         className={selectClass}
         role="combobox"
@@ -65,11 +112,11 @@ function CustomSelect({ id, label, value, onChange, options, required, error, er
         aria-controls={`${id}-listbox`}
         aria-describedby={error && errorId ? errorId : undefined}
         tabIndex={0}
-        onClick={() => setOpen(o => !o)}
+        onClick={handleToggle}
         onKeyDown={e => {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOpen(o => !o); }
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleToggle(); }
           if (e.key === 'Escape') setOpen(false);
-          if (e.key === 'ArrowDown' && !open) setOpen(true);
+          if (e.key === 'ArrowDown' && !open) handleToggle();
         }}
       >
         <span className="dialog-field__custom-select-value">
@@ -82,36 +129,7 @@ function CustomSelect({ id, label, value, onChange, options, required, error, er
       <label className={labelClass} htmlFor={id}>
         {label}{required && <span className="dialog-field__required"> *</span>}
       </label>
-      {open && (
-        <ul
-          id={`${id}-listbox`}
-          className="dialog-field__custom-dropdown"
-          role="listbox"
-          aria-label={label}
-        >
-          <li
-            className="dialog-field__custom-dropdown-item"
-            role="option"
-            aria-selected={!hasValue}
-            onClick={() => { onChange(''); setOpen(false); }}
-          >
-            <span className="dialog-field__custom-dropdown-text">Keine Auswahl</span>
-            {!hasValue && <span className="icon dialog-field__custom-dropdown-check">check</span>}
-          </li>
-          {options.map(opt => (
-            <li
-              key={opt}
-              className="dialog-field__custom-dropdown-item"
-              role="option"
-              aria-selected={value === opt}
-              onClick={() => { onChange(opt); setOpen(false); }}
-            >
-              <span className="dialog-field__custom-dropdown-text">{opt}</span>
-              {value === opt && <span className="icon dialog-field__custom-dropdown-check">check</span>}
-            </li>
-          ))}
-        </ul>
-      )}
+      {open && ReactDOM.createPortal(dropdown, document.body)}
     </div>
   );
 }

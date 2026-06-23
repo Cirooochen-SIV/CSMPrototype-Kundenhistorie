@@ -1749,10 +1749,6 @@ html, body, #root {
 }
 
 .dialog-field__custom-dropdown {
-  position: absolute;
-  top: calc(100% + 4px);
-  left: 0;
-  right: 0;
   background: var(--surface-container-high);
   border-radius: var(--radius-md);
   box-shadow: 0 4px 8px -4px #0a0d1299, 0 2px 2px -1px #0a0d120a;
