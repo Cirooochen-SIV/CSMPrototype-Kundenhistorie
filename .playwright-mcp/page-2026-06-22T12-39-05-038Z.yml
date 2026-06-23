@@ -1,0 +1,141 @@
+- generic [ref=e3]:
+  - complementary "Navigation" [ref=e4]:
+    - generic [ref=e5]:
+      - button "Dashboard" [ref=e6] [cursor=pointer]:
+        - generic [ref=e7]: grid_view
+      - button "Kunden" [ref=e8] [cursor=pointer]:
+        - generic [ref=e9]: manage_accounts
+      - button "Übersicht" [ref=e10] [cursor=pointer]:
+        - generic [ref=e11]: apps
+      - button "Vorgänge" [ref=e12] [cursor=pointer]:
+        - generic [ref=e13]: event_note
+    - generic [ref=e14]:
+      - button "Einstellungen" [ref=e15] [cursor=pointer]:
+        - generic [ref=e16]: settings
+      - button "Dokumente" [ref=e17] [cursor=pointer]:
+        - generic [ref=e18]: description
+      - 'generic "Benutzer: Anna Miller" [ref=e19] [cursor=pointer]': A
+  - generic [ref=e20]:
+    - banner [ref=e21]:
+      - button "Zurück" [ref=e22] [cursor=pointer]:
+        - generic [ref=e23]: arrow_back
+      - generic [ref=e24]:
+        - generic [ref=e25]: Wilson Jenny
+        - generic [ref=e26]: 🞄
+        - generic [ref=e27]: "3865349091"
+        - generic [ref=e28]: Sondervertragskunde
+        - generic [ref=e29]: Lastschrift
+        - generic [ref=e30]: "+2"
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - generic [ref=e33]:
+          - generic [ref=e34]: location_on
+          - generic [ref=e35]: 19055 Schwerin, Alter Garten 107
+        - generic [ref=e36]:
+          - generic [ref=e37]: mail
+          - generic [ref=e38]: marc.heidelberg@gmail.com
+        - generic [ref=e39]:
+          - generic [ref=e40]: call
+          - generic [ref=e41]: (+49) 163 555 1584
+        - generic [ref=e42]:
+          - generic [ref=e43]: cake
+          - generic [ref=e44]: 21.02.1986
+      - paragraph [ref=e45]:
+        - strong [ref=e46]: "Kommentar:"
+        - text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut a...
+        - button "Mehr anzeigen" [ref=e47] [cursor=pointer]
+    - generic [ref=e48]:
+      - tablist "Page sections" [ref=e49]:
+        - tab "Customer history" [selected] [ref=e50] [cursor=pointer]
+        - tab "Faktura" [ref=e51] [cursor=pointer]
+        - tab "Buchhaltung" [ref=e52] [cursor=pointer]
+        - tab "Verträge" [ref=e53] [cursor=pointer]
+        - tab "Rechnungen" [ref=e54] [cursor=pointer]
+        - tab "Offene Posten" [ref=e55] [cursor=pointer]
+        - tab "Mahnungen" [ref=e56] [cursor=pointer]
+      - tabpanel [ref=e57]:
+        - generic [ref=e58]:
+          - heading "Customer history" [level=2] [ref=e59]
+          - button "add_circle Neue Kundenhistorie hinzufügen" [ref=e60] [cursor=pointer]:
+            - generic [ref=e61]: add_circle
+            - text: Neue Kundenhistorie hinzufügen
+        - generic [ref=e62]:
+          - generic [ref=e63]:
+            - strong [ref=e64]: "1"
+            - text: Events
+          - generic [ref=e65]:
+            - button "calendar_today 13.04.2026 - 19.04.2026" [ref=e66] [cursor=pointer]:
+              - generic [ref=e67]: calendar_today
+              - text: 13.04.2026 - 19.04.2026
+            - button "Lieferstelle arrow_drop_down" [ref=e68] [cursor=pointer]:
+              - text: Lieferstelle
+              - generic [ref=e69]: arrow_drop_down
+            - generic [ref=e70]:
+              - button "filter_list Filter (1)" [expanded] [ref=e279] [cursor=pointer]:
+                - generic [ref=e72]: filter_list
+                - text: Filter (1)
+              - dialog "Filter" [ref=e248]:
+                - generic [ref=e249]:
+                  - generic [ref=e250]:
+                    - text: Filters
+                    - generic [ref=e280]: (1)
+                  - button "Alle löschen" [ref=e281] [cursor=pointer]
+                - generic [ref=e251]:
+                  - paragraph [ref=e252]: Event type
+                  - generic [ref=e253] [cursor=pointer]:
+                    - checkbox "Rechnungserstellung" [ref=e254]
+                    - generic [ref=e255]: Rechnungserstellung
+                  - generic [ref=e256] [cursor=pointer]:
+                    - checkbox "Zahlstände" [ref=e257]
+                    - generic [ref=e258]: Zahlstände
+                  - generic [ref=e259] [cursor=pointer]:
+                    - checkbox "Mahnlauf" [ref=e260]
+                    - generic [ref=e261]: Mahnlauf
+                  - generic [ref=e262] [cursor=pointer]:
+                    - checkbox "Anruf" [checked] [active] [ref=e263]
+                    - generic [ref=e264]: Anruf
+                  - generic [ref=e265] [cursor=pointer]:
+                    - checkbox "Notiz" [ref=e266]
+                    - generic [ref=e267]: Notiz
+                  - generic [ref=e268] [cursor=pointer]:
+                    - checkbox "Übereinstimmung" [ref=e269]
+                    - generic [ref=e270]: Übereinstimmung
+                - generic [ref=e271]:
+                  - paragraph [ref=e272]: Entry type
+                  - generic [ref=e273] [cursor=pointer]:
+                    - checkbox "System entries" [ref=e274]
+                    - generic [ref=e275]: System entries
+                  - generic [ref=e276] [cursor=pointer]:
+                    - checkbox "Manual entries" [ref=e277]
+                    - generic [ref=e278]: Manual entries
+            - button "Suchen" [ref=e73] [cursor=pointer]:
+              - generic [ref=e74]: search
+        - generic [ref=e174]:
+          - generic [ref=e177]: person
+          - generic [ref=e179]:
+            - generic [ref=e180]:
+              - generic [ref=e181]: Heute
+              - generic [ref=e182]: ·
+              - generic [ref=e183]: Anna Miller
+              - generic [ref=e184]: ·
+              - generic [ref=e185]: Anruf
+            - generic [ref=e186]:
+              - button "Aufklappen" [ref=e187] [cursor=pointer]:
+                - generic [ref=e188]: arrow_drop_down
+              - generic [ref=e190]:
+                - paragraph [ref=e191]: Kundin meldet sich zur erhöhten Abschlagszahlung ab Mai.
+                - paragraph [ref=e192]: Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+        - button "Show more" [ref=e232] [cursor=pointer]
+  - complementary "Aktionen" [ref=e233]:
+    - generic [ref=e235]: Aktionen
+    - generic [ref=e236]:
+      - generic [ref=e238]: search
+      - navigation "Schnellzugriff" [ref=e239]:
+        - button "Kundendaten ändern" [ref=e240] [cursor=pointer]
+        - button "Rechnungsadresse ändern" [ref=e241] [cursor=pointer]
+        - button "Kontakte ändern" [ref=e242] [cursor=pointer]
+        - button "Neue Belieferung" [ref=e243] [cursor=pointer]
+        - button "Zählerstand erfassen" [ref=e244] [cursor=pointer]
+        - button "Abschlag ändern" [ref=e245] [cursor=pointer]
+        - button "Ratenplan anlegen" [ref=e246] [cursor=pointer]
+        - button "Mahnsperren bearbeiten" [ref=e247] [cursor=pointer]

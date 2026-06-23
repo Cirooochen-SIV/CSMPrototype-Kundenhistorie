@@ -1,0 +1,360 @@
+/* ============================================================
+   Design Tokens — CSM Prototype
+   Source: nordic-design-system / figma-variables.json
+   ============================================================ */
+
+/* ===== TYPOGRAPHY BASE ===== */
+:root {
+  --font-family: 'Open Sans', sans-serif;
+  --font-icons: 'Material Symbols Rounded', sans-serif;
+}
+
+/* ===== SPACING (mode-independent) ===== */
+:root {
+  --spacing-none: 0px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-2lg: 32px;
+}
+
+/* ===== BORDER RADIUS (mode-independent) ===== */
+:root {
+  --radius-none: 0px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-round: 32px;
+}
+
+/* ===== LABEL COLORS (mode-independent) ===== */
+:root {
+  --label-grey: #f3f4f6;
+  --label-moss: #e6f4d7;
+  --label-green: #d3f8df;
+  --label-cyan: #cff9fe;
+  --label-blue: #d1e9ff;
+  --label-indigo: #e0eaff;
+  --label-purple: #ebe9fe;
+  --label-pink: #fce7f6;
+  --label-orange: #ffe6d5;
+  --label-yellow: #fef7c3;
+  --on-surface-label: #3c3c3c;
+}
+
+/* ===== AVATAR COLORS (mode-independent) ===== */
+:root {
+  --avatar-yellow: #ffe099;
+  --avatar-orange: #ffc799;
+  --avatar-pink: #ff99ca;
+  --avatar-violet: #ca99ff;
+  --avatar-blue: #99cbff;
+  --avatar-teal: #99dcff;
+  --avatar-green: #b2e6c3;
+  --avatar-grey: #ebebeb;
+  --on-surface-avatar: #1a1a1a;
+  --on-surface-disabled: #717580;
+  --on-surface-high-disabled: #717580;
+}
+
+/* ===== TYPOGRAPHY SCALE (mode-independent) ===== */
+:root {
+  --font-display-size: 32px;
+  --font-display-line-height: 40px;
+  --font-display-weight: 700;
+  --font-display-letter-spacing: -0.64px;
+
+  --font-h1-size: 24px;
+  --font-h1-line-height: 32px;
+  --font-h1-weight: 700;
+  --font-h1-letter-spacing: -0.24px;
+
+  --font-h2-size: 18px;
+  --font-h2-line-height: 24px;
+  --font-h2-weight: 700;
+  --font-h2-letter-spacing: 0;
+
+  --font-h3-size: 14px;
+  --font-h3-line-height: 22px;
+  --font-h3-weight: 600;
+  --font-h3-letter-spacing: 0;
+
+  --font-actions-size: 14px;
+  --font-actions-line-height: 22px;
+  --font-actions-weight: 600;
+  --font-actions-letter-spacing: 0;
+
+  --font-body-size: 14px;
+  --font-body-line-height: 22px;
+  --font-body-weight: 400;
+  --font-body-letter-spacing: 0;
+
+  --font-body-bold-size: 14px;
+  --font-body-bold-line-height: 22px;
+  --font-body-bold-weight: 600;
+  --font-body-bold-letter-spacing: 0;
+
+  --font-labels-size: 12px;
+  --font-labels-line-height: 20px;
+  --font-labels-weight: 600;
+  --font-labels-letter-spacing: 0;
+
+  --font-details-size: 12px;
+  --font-details-line-height: 18px;
+  --font-details-weight: 400;
+  --font-details-letter-spacing: 0;
+
+  --font-details-bold-size: 12px;
+  --font-details-bold-line-height: 18px;
+  --font-details-bold-weight: 600;
+  --font-details-bold-letter-spacing: 0;
+
+  --font-caption-size: 10px;
+  --font-caption-line-height: 15px;
+  --font-caption-weight: 400;
+  --font-caption-letter-spacing: 0;
+
+  --font-caption-bold-size: 10px;
+  --font-caption-bold-line-height: 15px;
+  --font-caption-bold-weight: 600;
+  --font-caption-bold-letter-spacing: 0;
+
+  /* Icon sizes */
+  --icons-xl: 64px;
+  --icons-lg: 24px;
+  --icons-default: 20px;
+  --icons-sm: 16px;
+}
+
+/* ===== LIGHT THEME ===== */
+html.theme-light {
+  /* On-surface */
+  --on-surface-primary: #1a1a1a;
+  --on-surface-secondary: #1a1a1a;
+  --on-surface-tertiary: #6c6c6c;
+  --on-surface-placeholder: #a4a7ae;
+  --on-surface-status: #3c3c3c;
+  --on-surface-navigation: #3c3c3c;
+  --on-surface-high: #3c3c3c;
+  --on-surface-high-secondary: #6c6c6c;
+  --on-surface-brand: #ffffff;
+  --on-surface-label-disabled: #717580;
+  --inverse-on-surface: #ffffff;
+
+  /* Surfaces */
+  --surface: #ffffff;
+  --surface-secondary: #fafafa;
+  --surface-tertiary: #fafafa;
+  --surface-secondary-hover: #ebebeb;
+  --scrim: rgba(0, 0, 0, 0.12);
+
+  /* Containers */
+  --surface-container-primary: #ffffff;
+  --surface-container-primary-hover: #fafafa;
+  --surface-container-primary-selected: #f6f8ff;
+  --surface-container-primary-selected-hover: #eff4ff;
+  --surface-container-secondary: #fafafa;
+  --surface-container-secondary-hover: #f5f5f5;
+  --surface-container-tertiary: #e9eaeb;
+  --surface-container-quaternary: #e9eaeb;
+  --surface-container-high: #ffffff;
+  --surface-container-high-hover: #fafafa;
+  --surface-container-high-secondary: #f5f5f5;
+  --surface-container-high-secondary-hover: #f2f2f2;
+  --surface-container-high-highlighted: #e9eaeb;
+  --surface-container-highlighted: #fff4ed;
+  --surface-container-disabled: #fafafa;
+  --surface-container-brand: #494aa7;
+  --surface-container-ai: #f1f2ff;
+  --surface-container-ai-high: #dee5ff;
+  --surface-container-success: #f0f9f3;
+  --surface-container-success-high: #d9f0e2;
+  --surface-container-warning: #fff8eb;
+  --surface-container-warning-high: #feead9;
+  --surface-container-error: #fef2f2;
+  --surface-container-info: #e5eefb;
+  --inverse-surface-container-primary: #404040;
+
+  /* Accent */
+  --accent-primary: #1666e5;
+  --accent-on-primary: #ffffff;
+  --accent-primary-hover: #175cd3;
+  --accent-primary-disabled: #fafafa;
+  --accent-on-primary-disabled: #a4a7ae;
+  --accent-secondary: #ffffff;
+  --accent-on-secondary: #3c3c3c;
+  --accent-secondary-hover: #f5f5f5;
+  --accent-secondary-disabled: #ffffff;
+  --accent-on-secondary-disabled: #a4a7ae;
+  --accent-tertiary: #fafafa;
+  --accent-on-tertiary: #3c3c3c;
+  --accent-tertiary-hover: #f5f5f5;
+  --accent-tertiary-disabled: #fafafa;
+  --accent-on-tertiary-disabled: #a4a7ae;
+
+  /* Semantics */
+  --semantics-error: #cc1818;
+  --semantics-error-hover: #c41717;
+  --semantics-warning: #ff9819;
+  --semantics-warning-hover: #ea8a17;
+  --semantics-success: #008748;
+  --semantics-info: #1666e5;
+  --semantics-ai: #5358f9;
+  --semantics-focus: #333333;
+  --semantics-skeleton: #f4f4f4;
+
+  /* Outlines */
+  --outline-primary: #d5d7db;
+  --outline-secondary: #e9eaeb;
+  --outline-tertiary: #ededed;
+  --outline-disabled: #ededed;
+  --outline-warning: #feead9;
+  --outline-success: #d9f0e2;
+  --outline-error: #ffe1e1;
+  --outline-info: #d1dfff;
+  --outline-ai: #dee5ff;
+  --outline-highlight: #ffe6d5;
+
+  /* Status */
+  --status-progress: #c7e0ff;
+  --status-to-do: #ffd388;
+  --status-positive: #bbe5cc;
+  --status-negative: #ffc8c8;
+  --status-archived: #dde0e4;
+
+  /* Energy */
+  --energy-electricity: #ffbe17;
+  --energy-gas: #ff5252;
+  --energy-water: #17abff;
+  --energy-waste-water: #af5725;
+  --energy-heat: #e95e1d;
+  --energy-other: #6c1bf0;
+
+  /* Product */
+  --product-inbound: #494aa7;
+  --product-csm: #4380d9;
+  --product-feed-in: #227a7b;
+  --product-management: #ff7959;
+
+  /* Elevation */
+  --elevation-1: 0 1px 3px #0a0d1214, 0 1px 2px -1px #0a0d120f;
+  --elevation-2: 0 12px 16px -4px #0a0d1214, 0 4px 6px -2px #0a0d1208, 0 2px 2px -1px #0a0d120a;
+  --elevation-3: 0 3px 3px -1.5px #0a0d120a, 0 8px 8px -4px #0a0d1208, 0 20px 24px -4px #0a0d1214;
+}
+
+/* ===== DARK THEME ===== */
+html.theme-dark {
+  /* On-surface */
+  --on-surface-primary: #f7f7f7;
+  --on-surface-secondary: #f7f7f7;
+  --on-surface-tertiary: #949799;
+  --on-surface-placeholder: #6c6c6c;
+  --on-surface-status: #131516;
+  --on-surface-navigation: #f7f7f7;
+  --on-surface-high: #f7f7f7;
+  --on-surface-high-secondary: #f7f7f7;
+  --on-surface-brand: #f7f7f7;
+  --on-surface-label-disabled: #7e838d;
+  --inverse-on-surface: #131516;
+
+  /* Surfaces */
+  --surface: #131516;
+  --surface-secondary: #0c0e12;
+  --surface-tertiary: #0c0e12;
+  --surface-secondary-hover: #222630;
+  --scrim: rgba(0, 0, 0, 0.50);
+
+  /* Containers */
+  --surface-container-primary: #131516;
+  --surface-container-primary-hover: #222630;
+  --surface-container-primary-selected: #1b2436;
+  --surface-container-primary-selected-hover: #1c2639;
+  --surface-container-secondary: #222630;
+  --surface-container-secondary-hover: #222630;
+  --surface-container-tertiary: #222630;
+  --surface-container-quaternary: #373a41;
+  --surface-container-high: #222630;
+  --surface-container-high-hover: #2b2f37;
+  --surface-container-high-secondary: #222630;
+  --surface-container-high-secondary-hover: #222630;
+  --surface-container-high-highlighted: #222630;
+  --surface-container-highlighted: #1f2024;
+  --surface-container-disabled: #1f222a;
+  --surface-container-brand: #414141;
+  --surface-container-ai: #1f2236;
+  --surface-container-ai-high: #2e324d;
+  --surface-container-success: #192c28;
+  --surface-container-success-high: #162f22;
+  --surface-container-warning: #2f281c;
+  --surface-container-warning-high: #352719;
+  --surface-container-error: #2f2124;
+  --surface-container-info: #1b2436;
+  --inverse-surface-container-primary: #fafafa;
+
+  /* Accent */
+  --accent-primary: #95b2ff;
+  --accent-on-primary: #131516;
+  --accent-primary-hover: #7d96fc;
+  --accent-primary-disabled: #222630;
+  --accent-on-primary-disabled: #858b8e;
+  --accent-secondary: #131516;
+  --accent-on-secondary: #f7f7f7;
+  --accent-secondary-hover: #222630;
+  --accent-secondary-disabled: #131516;
+  --accent-on-secondary-disabled: #858b8e;
+  --accent-tertiary: #222630;
+  --accent-on-tertiary: #f7f7f7;
+  --accent-tertiary-hover: #222630;
+  --accent-tertiary-disabled: #222630;
+  --accent-on-tertiary-disabled: #858b8e;
+
+  /* Semantics */
+  --semantics-error: #f97066;
+  --semantics-error-hover: #ef6c62;
+  --semantics-warning: #fdb022;
+  --semantics-warning-hover: #e8a21f;
+  --semantics-success: #47cd89;
+  --semantics-info: #528bff;
+  --semantics-ai: #787dff;
+  --semantics-focus: #ffffff;
+  --semantics-skeleton: #1e2129;
+
+  /* Outlines */
+  --outline-primary: #373a41;
+  --outline-secondary: #292e38;
+  --outline-tertiary: #222630;
+  --outline-disabled: #222630;
+  --outline-warning: #42351c;
+  --outline-success: #1d3b31;
+  --outline-error: #41282a;
+  --outline-info: #202d49;
+  --outline-ai: #272b49;
+  --outline-highlight: #2a2828;
+
+  /* Status */
+  --status-progress: #84c5ff;
+  --status-to-do: #ffbf54;
+  --status-positive: #7fe7b5;
+  --status-negative: #ff9999;
+  --status-archived: #aeb4ba;
+
+  /* Energy */
+  --energy-electricity: #ffc845;
+  --energy-gas: #ff4c4c;
+  --energy-water: #3a8dff;
+  --energy-waste-water: #d07442;
+  --energy-heat: #ff7435;
+  --energy-other: #8b4dff;
+
+  /* Product */
+  --product-inbound: #414141;
+  --product-csm: #2d50a0;
+  --product-feed-in: #206065;
+  --product-management: #c44832;
+
+  /* Elevation */
+  --elevation-1: 0 0 0 1px #ffffff0d, 0 1px 3px #00000066, 0 1px 2px -1px #0000008c;
+  --elevation-2: 0 0 0 1px #ffffff0f, 0 8px 12px -4px #00000099, 0 2px 2px -1px #0000008c;
+  --elevation-3: 0 0 0 1px #ffffff12, 0 16px 24px -6px #000000b3, 0 4px 4px -2px #00000099;
+}

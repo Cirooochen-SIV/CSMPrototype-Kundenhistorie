@@ -1,0 +1,267 @@
+- generic [ref=e3]:
+  - complementary "Navigation" [ref=e4]:
+    - generic [ref=e5]:
+      - button "Dashboard" [ref=e6] [cursor=pointer]:
+        - generic [ref=e7]: grid_view
+      - button "Kunden" [ref=e8] [cursor=pointer]:
+        - generic [ref=e9]: manage_accounts
+      - button "Übersicht" [ref=e10] [cursor=pointer]:
+        - generic [ref=e11]: apps
+      - button "Vorgänge" [ref=e12] [cursor=pointer]:
+        - generic [ref=e13]: event_note
+    - generic [ref=e14]:
+      - button "Einstellungen" [ref=e15] [cursor=pointer]:
+        - generic [ref=e16]: settings
+      - button "Dokumente" [ref=e17] [cursor=pointer]:
+        - generic [ref=e18]: description
+      - 'generic "Benutzer: Anna Miller" [ref=e19] [cursor=pointer]': A
+  - generic [ref=e20]:
+    - banner [ref=e21]:
+      - button "Zurück" [ref=e22] [cursor=pointer]:
+        - generic [ref=e23]: arrow_back
+      - generic [ref=e24]:
+        - generic [ref=e25]: Wilson Jenny
+        - generic [ref=e26]: 🞄
+        - generic [ref=e27]: "3865349091"
+        - generic [ref=e28]: Sondervertragskunde
+        - generic [ref=e29]: Lastschrift
+        - generic [ref=e30]: "+2"
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - generic [ref=e33]:
+          - generic [ref=e34]: location_on
+          - generic [ref=e35]: 19055 Schwerin, Alter Garten 107
+        - generic [ref=e36]:
+          - generic [ref=e37]: mail
+          - generic [ref=e38]: marc.heidelberg@gmail.com
+        - generic [ref=e39]:
+          - generic [ref=e40]: call
+          - generic [ref=e41]: (+49) 163 555 1584
+        - generic [ref=e42]:
+          - generic [ref=e43]: cake
+          - generic [ref=e44]: 21.02.1986
+      - paragraph [ref=e45]:
+        - strong [ref=e46]: "Kommentar:"
+        - text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut a...
+        - button "Mehr anzeigen" [ref=e47] [cursor=pointer]
+    - generic [ref=e48]:
+      - tablist "Page sections" [ref=e49]:
+        - tab "Customer history" [selected] [ref=e50] [cursor=pointer]
+        - tab "Faktura" [ref=e51] [cursor=pointer]
+        - tab "Buchhaltung" [ref=e52] [cursor=pointer]
+        - tab "Verträge" [ref=e53] [cursor=pointer]
+        - tab "Rechnungen" [ref=e54] [cursor=pointer]
+        - tab "Offene Posten" [ref=e55] [cursor=pointer]
+        - tab "Mahnungen" [ref=e56] [cursor=pointer]
+      - tabpanel [ref=e57]:
+        - generic [ref=e58]:
+          - heading "Customer history" [level=2] [ref=e59]
+          - button "add_circle Neue Kundenhistorie hinzufügen" [active] [ref=e60] [cursor=pointer]:
+            - generic [ref=e61]: add_circle
+            - text: Neue Kundenhistorie hinzufügen
+        - generic [ref=e62]:
+          - generic [ref=e63]:
+            - strong [ref=e64]: "7"
+            - text: Events
+          - generic [ref=e65]:
+            - button "calendar_today 13.04.2026 - 19.04.2026" [ref=e66] [cursor=pointer]:
+              - generic [ref=e67]: calendar_today
+              - text: 13.04.2026 - 19.04.2026
+            - button "Lieferstelle arrow_drop_down" [ref=e68] [cursor=pointer]:
+              - text: Lieferstelle
+              - generic [ref=e69]: arrow_drop_down
+            - button "filter_list Filter" [ref=e70] [cursor=pointer]:
+              - generic [ref=e71]: filter_list
+              - text: Filter
+            - button "Suchen" [ref=e72] [cursor=pointer]:
+              - generic [ref=e73]: search
+        - generic [ref=e74]:
+          - generic [ref=e75]:
+            - generic [ref=e78]: database
+            - generic [ref=e80]:
+              - generic [ref=e81]:
+                - generic [ref=e82]: Heute
+                - generic [ref=e83]: ·
+                - generic [ref=e84]: kVASy
+                - generic [ref=e85]: ·
+                - generic [ref=e86]: Rechnungserstellung
+              - generic [ref=e87]:
+                - button "Aufklappen" [ref=e88] [cursor=pointer]:
+                  - generic [ref=e89]: arrow_drop_down
+                - generic [ref=e91]:
+                  - paragraph [ref=e92]: Tarifwechsel auf „ÖkoStrom Aktiv" zum 01.05.2026 abgeschlossen.
+                  - paragraph [ref=e93]: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut a..
+          - generic [ref=e94]:
+            - generic [ref=e97]: database
+            - generic [ref=e99]:
+              - generic [ref=e100]:
+                - generic [ref=e101]: Gestern
+                - generic [ref=e102]: ·
+                - generic [ref=e103]: kVASy
+                - generic [ref=e104]: ·
+                - generic [ref=e105]: Zahlstände
+              - generic [ref=e106]:
+                - button "Aufklappen" [ref=e107] [cursor=pointer]:
+                  - generic [ref=e108]: arrow_drop_down
+                - generic [ref=e110]:
+                  - paragraph [ref=e111]: Turnauszahlung Strom offen — Zahlbetrag 14.382 kWh.
+                  - paragraph [ref=e112]: Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+          - generic [ref=e113]:
+            - generic [ref=e116]: database
+            - generic [ref=e118]:
+              - generic [ref=e119]:
+                - generic [ref=e120]: Gestern
+                - generic [ref=e121]: ·
+                - generic [ref=e122]: kVASy
+                - generic [ref=e123]: ·
+                - generic [ref=e124]: Rechnungserstellung
+              - generic [ref=e125]:
+                - button "Zuklappen" [expanded] [ref=e126] [cursor=pointer]:
+                  - generic [ref=e127]: arrow_drop_up
+                - generic [ref=e128]:
+                  - generic [ref=e129]:
+                    - paragraph [ref=e130]: Jahresrechnung Gas 2025 erstellt — Guthaben 38,20 €.
+                    - paragraph [ref=e131]: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut a..
+                  - generic [ref=e132]:
+                    - generic [ref=e133]:
+                      - generic [ref=e134]: Lieferstelle
+                      - generic [ref=e135]: Werderstrasse 132,10827, Berlin
+                    - generic [ref=e136]:
+                      - generic [ref=e137]: Abrechnungszeitraum
+                      - generic [ref=e138]: 01.01.2025–31.12.2025.
+                    - generic [ref=e139]:
+                      - generic [ref=e140]: Verbrauch
+                      - generic [ref=e141]: 3.420 kWh.
+                    - generic [ref=e142]:
+                      - generic [ref=e143]: Endbetrag
+                      - generic [ref=e144]: 1.284,55 € inkl. USt.
+                    - generic [ref=e145]:
+                      - generic [ref=e146]: Bereits geleistete Abschläge
+                      - generic [ref=e147]: 1.068,00 €.
+                    - generic [ref=e148]:
+                      - generic [ref=e149]: Nachzahlung
+                      - generic [ref=e150]: 216,55 €.
+                    - generic [ref=e151]:
+                      - generic [ref=e152]: Erstellt am
+                      - generic [ref=e153]: 28.04.2026 · 03:10 Uhr
+          - generic [ref=e154]:
+            - generic [ref=e157]: database
+            - generic [ref=e159]:
+              - generic [ref=e160]:
+                - generic [ref=e161]: Gestern
+                - generic [ref=e162]: ·
+                - generic [ref=e163]: kVASy
+                - generic [ref=e164]: ·
+                - generic [ref=e165]: Mahnlauf
+              - generic [ref=e166]:
+                - button "Aufklappen" [ref=e167] [cursor=pointer]:
+                  - generic [ref=e168]: arrow_drop_down
+                - generic [ref=e170]:
+                  - paragraph [ref=e171]: Mahnlauf Stufe 1 abgeschlossen — offener Betrag 142,80 €.
+                  - paragraph [ref=e172]: Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+          - generic [ref=e173]:
+            - generic [ref=e176]: call
+            - generic [ref=e178]:
+              - generic [ref=e179]:
+                - generic [ref=e180]: Heute
+                - generic [ref=e181]: ·
+                - generic [ref=e182]: Anna Miller
+                - generic [ref=e183]: ·
+                - generic [ref=e184]: Anruf
+              - generic [ref=e185]:
+                - button "Aufklappen" [ref=e186] [cursor=pointer]:
+                  - generic [ref=e187]: arrow_drop_down
+                - generic [ref=e189]:
+                  - paragraph [ref=e190]: Kundin meldet sich zur erhöhten Abschlagszahlung ab Mai.
+                  - paragraph [ref=e191]: Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+          - generic [ref=e192]:
+            - generic [ref=e195]: event_note
+            - generic [ref=e197]:
+              - generic [ref=e198]:
+                - generic [ref=e199]: Gestern
+                - generic [ref=e200]: ·
+                - generic [ref=e201]: Anna Miller
+                - generic [ref=e202]: ·
+                - generic [ref=e203]: Notiz
+                - generic [ref=e204]: Vereinbarungen
+              - generic [ref=e205]:
+                - button "Aufklappen" [ref=e206] [cursor=pointer]:
+                  - generic [ref=e207]: arrow_drop_down
+                - generic [ref=e209]:
+                  - paragraph [ref=e210]: Kundin wünscht künftig Rechnungsversand per E-Mail.
+                  - paragraph [ref=e211]: Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+          - generic [ref=e212]:
+            - generic [ref=e215]: event_note
+            - generic [ref=e216]:
+              - generic [ref=e217]:
+                - generic [ref=e218]: Gestern
+                - generic [ref=e219]: ·
+                - generic [ref=e220]: Anna Miller
+                - generic [ref=e221]: ·
+                - generic [ref=e222]: Notiz
+              - generic [ref=e223]:
+                - button "Aufklappen" [ref=e224] [cursor=pointer]:
+                  - generic [ref=e225]: arrow_drop_down
+                - generic [ref=e227]:
+                  - paragraph [ref=e228]: Kundin wünscht künftig Rechnungsversand per E-Mail.
+                  - paragraph [ref=e229]: Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+        - button "Show more" [ref=e231] [cursor=pointer]
+      - dialog "Neue Kundenhistorie hinzufügen" [ref=e247]:
+        - heading "Neue Kundenhistorie hinzufügen" [level=2] [ref=e248]
+        - generic [ref=e249]:
+          - generic [ref=e250]:
+            - generic [ref=e251]:
+              - generic [ref=e252]: Titel *
+              - textbox "Titel *" [ref=e253]:
+                - /placeholder: Titel eingeben
+            - generic [ref=e254]:
+              - generic [ref=e255]: Beschreibung *
+              - generic [ref=e256]:
+                - textbox "Beschreibung *" [ref=e257]:
+                  - /placeholder: Beschreiben Sie das Gespräch...
+                - generic [ref=e258]:
+                  - generic [ref=e259]: Beschreiben Sie das Gespräch...
+                  - generic [ref=e260]: 0/100
+            - generic [ref=e261]:
+              - generic [ref=e262]: Kategorie *
+              - generic [ref=e263]:
+                - combobox "Kategorie *" [ref=e264] [cursor=pointer]:
+                  - option "Keine Auswahl" [selected]
+                  - option "Anruf"
+                  - option "Notiz"
+                  - option "Übereinstimmung"
+                - generic: arrow_drop_down
+            - generic [ref=e265]:
+              - generic [ref=e266]:
+                - generic: Labels
+                - textbox "Label hinzufügen" [ref=e268]:
+                  - /placeholder: ""
+              - generic [ref=e269]:
+                - generic [ref=e270]:
+                  - generic [ref=e271]: info
+                  - text: Mehr erfahren.
+                - generic [ref=e272]: 0/3
+            - generic [ref=e273]:
+              - generic [ref=e274]: Lieferstelle
+              - generic [ref=e275]:
+                - combobox "Lieferstelle" [ref=e276] [cursor=pointer]:
+                  - option "Lieferstelle auswählen" [selected]
+                  - option "19055 Schwerin, Alter Garten 107"
+                  - option "19055 Schwerin, Alter Garten 47"
+                - generic: arrow_drop_down
+          - generic [ref=e277]:
+            - button "Abbrechen" [ref=e278] [cursor=pointer]
+            - button "Speichern" [disabled] [ref=e279]
+  - complementary "Aktionen" [ref=e232]:
+    - generic [ref=e234]: Aktionen
+    - generic [ref=e235]:
+      - generic [ref=e237]: search
+      - navigation "Schnellzugriff" [ref=e238]:
+        - button "Kundendaten ändern" [ref=e239] [cursor=pointer]
+        - button "Rechnungsadresse ändern" [ref=e240] [cursor=pointer]
+        - button "Kontakte ändern" [ref=e241] [cursor=pointer]
+        - button "Neue Belieferung" [ref=e242] [cursor=pointer]
+        - button "Zählerstand erfassen" [ref=e243] [cursor=pointer]
+        - button "Abschlag ändern" [ref=e244] [cursor=pointer]
+        - button "Ratenplan anlegen" [ref=e245] [cursor=pointer]
+        - button "Mahnsperren bearbeiten" [ref=e246] [cursor=pointer]

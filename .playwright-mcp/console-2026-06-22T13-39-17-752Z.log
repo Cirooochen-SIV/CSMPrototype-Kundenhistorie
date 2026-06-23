@@ -1,0 +1,48 @@
+[      34ms] [INFO] [webpack-dev-server] Server started: Hot Module Replacement disabled, Live Reloading enabled, Progress disabled, Overlay enabled. @ http://localhost:4200/polyfills.js:2086
+[      78ms] [ERROR] ERROR RuntimeError: NG0203: The `HighContrastModeDetector` token injection failed. `inject()` function must be called from an injection context such as a constructor, a factory function, a field initializer, or a function used with `runInInjectionContext`. Find more at https://v20.angular.dev/errors/NG0203
+    at injectInjectorOnly (http://localhost:4200/main.js:65338:11)
+    at ɵɵinject (http://localhost:4200/main.js:65357:59)
+    at inject (http://localhost:4200/main.js:65444:10)
+    at new MatCommonModule (http://localhost:4200/main.js:68975:60)
+    at Object.MatCommonModule_Factory [as useFactory] (http://localhost:4200/main.js:68978:14)
+    at Object.factory (http://localhost:4200/main.js:129988:32)
+    at http://localhost:4200/main.js:129893:35
+    at runInInjectorProfilerContext (http://localhost:4200/main.js:128482:5)
+    at R3Injector.hydrate (http://localhost:4200/main.js:129891:11)
+    at R3Injector.get (http://localhost:4200/main.js:129752:23) @ http://localhost:4200/main.js:131306
+[      79ms] [ERROR] RuntimeError: NG0203: The `HighContrastModeDetector` token injection failed. `inject()` function must be called from an injection context such as a constructor, a factory function, a field initializer, or a function used with `runInInjectionContext`. Find more at https://v20.angular.dev/errors/NG0203
+    at injectInjectorOnly (http://localhost:4200/main.js:65338:11)
+    at ɵɵinject (http://localhost:4200/main.js:65357:59)
+    at inject (http://localhost:4200/main.js:65444:10)
+    at new MatCommonModule (http://localhost:4200/main.js:68975:60)
+    at Object.MatCommonModule_Factory [as useFactory] (http://localhost:4200/main.js:68978:14)
+    at Object.factory (http://localhost:4200/main.js:129988:32)
+    at http://localhost:4200/main.js:129893:35
+    at runInInjectorProfilerContext (http://localhost:4200/main.js:128482:5)
+    at R3Injector.hydrate (http://localhost:4200/main.js:129891:11)
+    at R3Injector.get (http://localhost:4200/main.js:129752:23) @ http://localhost:4200/main.js:1592
+[   40258ms] [INFO] [webpack-dev-server] App updated. Recompiling... @ http://localhost:4200/polyfills.js:2086
+[   40464ms] [INFO] [webpack-dev-server] App updated. Reloading... @ http://localhost:4200/polyfills.js:2086
+[   40486ms] [INFO] [webpack-dev-server] Server started: Hot Module Replacement disabled, Live Reloading enabled, Progress disabled, Overlay enabled. @ http://localhost:4200/polyfills.js:2086
+[   40559ms] [ERROR] ERROR RuntimeError: NG0203: The `HighContrastModeDetector` token injection failed. `inject()` function must be called from an injection context such as a constructor, a factory function, a field initializer, or a function used with `runInInjectionContext`. Find more at https://v20.angular.dev/errors/NG0203
+    at injectInjectorOnly (http://localhost:4200/main.js:65346:11)
+    at ɵɵinject (http://localhost:4200/main.js:65365:59)
+    at inject (http://localhost:4200/main.js:65452:10)
+    at new MatCommonModule (http://localhost:4200/main.js:68983:60)
+    at Object.MatCommonModule_Factory [as useFactory] (http://localhost:4200/main.js:68986:14)
+    at Object.factory (http://localhost:4200/main.js:129996:32)
+    at http://localhost:4200/main.js:129901:35
+    at runInInjectorProfilerContext (http://localhost:4200/main.js:128490:5)
+    at R3Injector.hydrate (http://localhost:4200/main.js:129899:11)
+    at R3Injector.get (http://localhost:4200/main.js:129760:23) @ http://localhost:4200/main.js:131314
+[   40560ms] [ERROR] RuntimeError: NG0203: The `HighContrastModeDetector` token injection failed. `inject()` function must be called from an injection context such as a constructor, a factory function, a field initializer, or a function used with `runInInjectionContext`. Find more at https://v20.angular.dev/errors/NG0203
+    at injectInjectorOnly (http://localhost:4200/main.js:65346:11)
+    at ɵɵinject (http://localhost:4200/main.js:65365:59)
+    at inject (http://localhost:4200/main.js:65452:10)
+    at new MatCommonModule (http://localhost:4200/main.js:68983:60)
+    at Object.MatCommonModule_Factory [as useFactory] (http://localhost:4200/main.js:68986:14)
+    at Object.factory (http://localhost:4200/main.js:129996:32)
+    at http://localhost:4200/main.js:129901:35
+    at runInInjectorProfilerContext (http://localhost:4200/main.js:128490:5)
+    at R3Injector.hydrate (http://localhost:4200/main.js:129899:11)
+    at R3Injector.get (http://localhost:4200/main.js:129760:23) @ http://localhost:4200/main.js:1600
