@@ -49,7 +49,7 @@ export function FilterPanel({ filters, onChange, onClose }: Props) {
     return () => document.removeEventListener('keydown', handleKey);
   }, [onClose]);
 
-  const activeCount = filters.eventTypes.size + filters.entryTypes.size + filters.lieferstellen.size;
+  const activeCount = filters.eventTypes.size + filters.entryTypes.size;
 
   const toggleEventType = (type: string) => {
     const next = new Set(filters.eventTypes);
@@ -63,13 +63,7 @@ export function FilterPanel({ filters, onChange, onClose }: Props) {
     onChange({ ...filters, entryTypes: next });
   };
 
-  const toggleLieferstelle = (value: string) => {
-    const next = new Set(filters.lieferstellen);
-    next.has(value) ? next.delete(value) : next.add(value);
-    onChange({ ...filters, lieferstellen: next });
-  };
-
-  const clearAll = () => onChange({ eventTypes: new Set(), entryTypes: new Set(), lieferstellen: new Set() });
+  const clearAll = () => onChange({ ...filters, eventTypes: new Set(), entryTypes: new Set() });
 
   return (
     <div className="filter-panel" ref={panelRef} role="dialog" aria-label="Filter">
@@ -112,20 +106,6 @@ export function FilterPanel({ filters, onChange, onClose }: Props) {
         ))}
       </div>
 
-      <div className="filter-panel__section">
-        <p className="filter-panel__section-label">Lieferstelle</p>
-        {LIEFERSTELLE_OPTIONS.map(value => (
-          <label key={value} className="filter-panel__option">
-            <input
-              type="checkbox"
-              className="filter-panel__checkbox"
-              checked={filters.lieferstellen.has(value)}
-              onChange={() => toggleLieferstelle(value)}
-            />
-            <span className="filter-panel__option-text">{value}</span>
-          </label>
-        ))}
-      </div>
     </div>
   );
 }

@@ -4,6 +4,7 @@ export const mockEvents: CustomerEvent[] = [
   {
     id: '1',
     date: 'Heute',
+    time: '14:23 Uhr',
     source: 'kVASy',
     type: 'Rechnungserstellung',
     icon: 'database',
@@ -12,6 +13,7 @@ export const mockEvents: CustomerEvent[] = [
       'Der Tarif wurde erfolgreich von „KlassikerStrom Basis" auf „ÖkoStrom Aktiv" umgestellt. Der neue Tarif gilt ab dem 01.05.2026 und beinhaltet 100 % Ökostrom aus erneuerbaren Energiequellen.',
     isSystem: true,
     details: [
+      { label: 'Lieferstelle', value: 'Werderstrasse 132, 10827 Berlin' },
       { label: 'Alter Tarif', value: 'KlassikerStrom Basis' },
       { label: 'Neuer Tarif', value: 'ÖkoStrom Aktiv' },
       { label: 'Gültig ab', value: '01.05.2026' },
@@ -22,8 +24,24 @@ export const mockEvents: CustomerEvent[] = [
     ],
   },
   {
+    id: '5',
+    date: 'Heute',
+    time: '10:15 Uhr',
+    source: 'Anna Miller',
+    type: 'Anruf',
+    icon: 'call',
+    title: 'Kundin meldet sich zur erhöhten Abschlagszahlung ab Mai.',
+    description:
+      'Kundin ruft an und erkundigt sich über die Erhöhung des monatlichen Abschlags ab Mai 2026. Sie wurde über die gestiegenen Energiekosten und die aktuelle Tarifanpassung informiert. Kundin ist einverstanden.',
+    isSystem: false,
+    details: [
+      { label: 'Lieferstelle', value: 'Werderstrasse 132, 10827 Berlin' },
+    ],
+  },
+  {
     id: '2',
     date: 'Gestern',
+    time: '16:42 Uhr',
     source: 'kVASy',
     type: 'Zahlstände',
     icon: 'database',
@@ -32,6 +50,7 @@ export const mockEvents: CustomerEvent[] = [
       'Zählerstandsmeldung für die Messperiode April 2026 liegt vor. Der ermittelte Verbrauch beträgt 14.382 kWh. Die Auszahlung des Turnsaldos ist aktuell ausstehend.',
     isSystem: true,
     details: [
+      { label: 'Lieferstelle', value: '19055 Schwerin, Alter Garten 107' },
       { label: 'Zählernummer', value: '1ESY1160030787' },
       { label: 'Sparte', value: 'Strom' },
       { label: 'Ablesedatum', value: '30.04.2026' },
@@ -44,6 +63,7 @@ export const mockEvents: CustomerEvent[] = [
   {
     id: '3',
     date: 'Gestern',
+    time: '09:30 Uhr',
     source: 'kVASy',
     type: 'Rechnungserstellung',
     icon: 'database',
@@ -64,6 +84,7 @@ export const mockEvents: CustomerEvent[] = [
   {
     id: '4',
     date: 'Gestern',
+    time: '07:11 Uhr',
     source: 'kVASy',
     type: 'Mahnlauf',
     icon: 'database',
@@ -72,6 +93,7 @@ export const mockEvents: CustomerEvent[] = [
       'Die erste Mahnstufe wurde automatisch ausgelöst, da Rechnung Nr. RE-2026-04182 bis zum Fälligkeitsdatum unbezahlt blieb. Eine Mahnung wurde postalisch versandt.',
     isSystem: true,
     details: [
+      { label: 'Lieferstelle', value: 'Werderstrasse 132, 10827 Berlin' },
       { label: 'Rechnungsnummer', value: 'RE-2026-04182' },
       { label: 'Fälligkeitsdatum', value: '14.04.2026' },
       { label: 'Offener Betrag', value: '142,80 €' },
@@ -82,22 +104,9 @@ export const mockEvents: CustomerEvent[] = [
     ],
   },
   {
-    id: '5',
-    date: 'Heute',
-    source: 'Anna Miller',
-    type: 'Anruf',
-    icon: 'call',
-    title: 'Kundin meldet sich zur erhöhten Abschlagszahlung ab Mai.',
-    description:
-      'Kundin ruft an und erkundigt sich über die Erhöhung des monatlichen Abschlags ab Mai 2026. Sie wurde über die gestiegenen Energiekosten und die aktuelle Tarifanpassung informiert. Kundin ist einverstanden.',
-    isSystem: false,
-    details: [
-      { label: 'Lieferstelle', value: 'Werderstrasse 132, 10827 Berlin' },
-    ],
-  },
-  {
     id: '6',
-    date: 'Gestern',
+    date: 'Vor 1 Tag',
+    time: '14:00 Uhr',
     source: 'Anna Miller',
     type: 'Notiz',
     icon: 'event_note',
@@ -107,21 +116,22 @@ export const mockEvents: CustomerEvent[] = [
     labels: [{ text: 'Vereinbarungen', color: 'label-green' }],
     isSystem: false,
     details: [
-      { label: 'Lieferstelle', value: 'Werderstrasse 132, 10827 Berlin' },
+      { label: 'Lieferstelle', value: '19055 Schwerin, Alter Garten 47' },
     ],
   },
   {
     id: '7',
-    date: 'Gestern',
+    date: 'Vor 2 Tagen',
+    time: '09:45 Uhr',
     source: 'Anna Miller',
     type: 'Notiz',
     icon: 'event_note',
-    title: 'Kundin wünscht künftig Rechnungsversand per E-Mail.',
+    title: 'Bestätigung: Umstellung auf E-Mail-Rechnungsversand.',
     description:
       'Rückruf der Kundin zur Bestätigung — Umstellung auf E-Mail-Rechnungsversand wurde korrekt eingetragen. Kundin hat eine Testbenachrichtigung erhalten und den Empfang bestätigt.',
     isSystem: false,
     details: [
-      { label: 'Lieferstelle', value: 'Werderstrasse 132, 10827 Berlin' },
+      { label: 'Lieferstelle', value: '19055 Schwerin, Alter Garten 47' },
     ],
   },
 ];

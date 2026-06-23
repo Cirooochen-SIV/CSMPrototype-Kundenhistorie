@@ -7,12 +7,11 @@ import { FilterPanel, FilterState, LIEFERSTELLE_OPTIONS } from './FilterPanel';
 
 const TABS = [
   'Kundenhistorie',
-  'Faktura',
-  'Buchhaltung',
+  'Fälle',
+  'Bankverbindung',
   'Verträge',
   'Rechnungen',
   'Offene Posten',
-  'Mahnungen',
 ];
 
 const EMPTY_FILTERS: FilterState = { eventTypes: new Set(), entryTypes: new Set(), lieferstellen: new Set() };

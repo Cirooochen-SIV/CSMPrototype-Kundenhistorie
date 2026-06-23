@@ -10,6 +10,8 @@ export function EventCard({ event, isLast }: Props) {
   const hasDetails = !!(event.details && event.details.length > 0);
   const [expanded, setExpanded] = useState(false);
 
+  const dateLabel = event.time ? `${event.date}, ${event.time}` : event.date;
+
   return (
     <div className="event-row">
       {/* Leading icon column */}
@@ -24,7 +26,7 @@ export function EventCard({ event, isLast }: Props) {
       <div className="event-content">
         {/* Meta info */}
         <div className="event-meta">
-          <span className="event-meta__text">{event.date}</span>
+          <span className="event-meta__text">{dateLabel}</span>
           <span className="event-meta__dot">·</span>
           <span className="event-meta__text">{event.source}</span>
           <span className="event-meta__dot">·</span>
@@ -37,16 +39,23 @@ export function EventCard({ event, isLast }: Props) {
         </div>
 
         {/* Card */}
-        <div className="event-card">
+        <div
+          className={`event-card${hasDetails ? ' event-card--expandable' : ''}`}
+          onClick={() => hasDetails && setExpanded(e => !e)}
+          role={hasDetails ? 'button' : undefined}
+          tabIndex={hasDetails ? 0 : undefined}
+          aria-expanded={hasDetails ? expanded : undefined}
+          onKeyDown={(e) => {
+            if (hasDetails && (e.key === 'Enter' || e.key === ' ')) {
+              e.preventDefault();
+              setExpanded(prev => !prev);
+            }
+          }}
+        >
           {hasDetails && (
-            <button
-              className="event-card__toggle"
-              onClick={() => setExpanded(e => !e)}
-              aria-expanded={expanded}
-              aria-label={expanded ? 'Zuklappen' : 'Aufklappen'}
-            >
+            <span className="event-card__toggle-icon" aria-hidden="true">
               <span className="icon">{expanded ? 'arrow_drop_up' : 'arrow_drop_down'}</span>
-            </button>
+            </span>
           )}
           <div className="event-card__body">
             <div className="event-card__title-group">

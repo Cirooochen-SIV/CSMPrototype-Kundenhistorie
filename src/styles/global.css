@@ -899,7 +899,7 @@ html, body, #root {
   font-family: var(--font-family);
   font-size: 14px;
   line-height: 22px;
-  font-weight: 400;
+  font-weight: 600;
   color: var(--accent-primary);
   cursor: pointer;
   transition: background 150ms ease;
@@ -996,33 +996,40 @@ html, body, #root {
   position: absolute;
   top: calc(100% + 6px);
   right: 0;
-  width: 320px;
+  width: 300px;
   background: var(--surface-container-high);
   border: 1px solid var(--outline-secondary);
   border-radius: var(--radius-md);
   box-shadow: 0 12px 16px -4px #0a0d1214, 0 4px 6px -2px #0a0d1208, 0 2px 2px -1px #0a0d120a;
   z-index: 200;
   overflow: hidden;
+  max-height: 425px;
+  overflow-y: auto;
 }
 
 .filter-panel__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 20px;
+  height: 48px;
+  padding: 0 16px;
   border-bottom: 1px solid var(--outline-secondary);
+  position: sticky;
+  top: 0;
+  background: var(--surface-container-high);
+  z-index: 1;
 }
 
 .filter-panel__title {
   font-size: 14px;
   line-height: 22px;
-  font-weight: 700;
-  color: var(--on-surface-primary);
+  font-weight: 600;
+  color: var(--on-surface-high);
 }
 
 .filter-panel__count {
-  font-weight: 700;
-  color: var(--on-surface-primary);
+  font-weight: 600;
+  color: var(--on-surface-tertiary);
 }
 
 .filter-panel__clear {
@@ -1040,10 +1047,10 @@ html, body, #root {
 .filter-panel__clear:hover { text-decoration: underline; }
 
 .filter-panel__section {
-  padding: 16px 20px;
+  padding: 4px 0;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0;
 }
 
 .filter-panel__section + .filter-panel__section {
@@ -1051,11 +1058,14 @@ html, body, #root {
 }
 
 .filter-panel__section-label {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 16px;
   font-size: 12px;
   line-height: 20px;
   font-weight: 600;
-  color: var(--on-surface-tertiary);
-  margin-bottom: 8px;
+  color: var(--on-surface-high-secondary);
 }
 
 .filter-panel__option {
@@ -1064,12 +1074,17 @@ html, body, #root {
   gap: 12px;
   height: 40px;
   cursor: pointer;
-  border-radius: var(--radius-md);
-  padding: 0 4px;
+  border-radius: var(--radius-sm);
+  padding: 0 12px;
+  margin: 0 4px;
 }
 
 .filter-panel__option:hover {
   background: var(--surface-container-high-hover);
+}
+
+.filter-panel__option:hover .filter-panel__option-text {
+  font-weight: 600;
 }
 
 .filter-panel__checkbox {
@@ -1218,25 +1233,30 @@ html, body, #root {
   gap: 12px;
   align-items: flex-start;
   background: var(--surface-container-primary);
+  text-align: left;
+  width: 100%;
+  transition: background 120ms ease;
 }
 
-.event-card__toggle {
-  width: 24px;
-  height: 24px;
+.event-card--expandable {
+  cursor: pointer;
+}
+
+.event-card--expandable:hover {
+  background: var(--surface-container-primary-hover);
+}
+
+.event-card__toggle-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
-  background: none;
-  cursor: pointer;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
-  padding: 0;
-  color: var(--accent-on-secondary);
-  border-radius: var(--radius-md);
+  color: var(--on-surface-tertiary);
 }
 
-.event-card__toggle:hover { background: var(--surface-container-secondary); }
-.event-card__toggle .icon { font-size: 24px; line-height: 24px; }
+.event-card__toggle-icon .icon { font-size: 24px; line-height: 24px; }
 
 .event-card__body {
   flex: 1;
@@ -1331,7 +1351,7 @@ html, body, #root {
   font-family: var(--font-family);
   font-size: 14px;
   line-height: 22px;
-  font-weight: 400;
+  font-weight: 600;
   color: var(--accent-primary);
   cursor: pointer;
   transition: background 150ms ease;

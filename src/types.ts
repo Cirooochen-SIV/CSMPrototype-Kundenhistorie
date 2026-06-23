@@ -10,7 +10,8 @@ export interface LabelChip {
 
 export interface CustomerEvent {
   id: string;
-  date: string; // "Heute", "Gestern", "12. März 2025", etc.
+  date: string; // "Heute", "Gestern", "Vor 1 Tag", etc.
+  time?: string; // "14:23 Uhr"
   source: string; // "kVASy" for system, user name for manual
   type: string; // "Rechnungserstellung", "Anruf", etc.
   icon: string; // Material Symbols icon name
