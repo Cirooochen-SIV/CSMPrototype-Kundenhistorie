@@ -72,8 +72,8 @@ function CustomSelect({ id, label, value, onChange, options, required, error, er
           if (e.key === 'ArrowDown' && !open) setOpen(true);
         }}
       >
-        <span className={`dialog-field__custom-select-value${!hasValue ? ' dialog-field__custom-select-value--placeholder' : ''}`}>
-          {hasValue ? value : 'Keine Auswahl'}
+        <span className="dialog-field__custom-select-value">
+          {value}
         </span>
         <span className={`icon dialog-field__custom-select-arrow${open ? ' dialog-field__custom-select-arrow--open' : ''}`}>
           arrow_drop_down
