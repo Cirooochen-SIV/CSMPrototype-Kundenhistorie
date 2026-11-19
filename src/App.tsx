@@ -12,7 +12,7 @@ import { CaseRow, CaseStatus } from './types';
 type View = 'customer' | 'case-overview' | 'case-detail';
 
 function App() {
-  const [view, setView] = useState<View>('customer');
+  const [view, setView] = useState<View>('case-overview');
   const [cases, setCases] = useState<CaseRow[]>(mockCases);
   const [activeCaseId, setActiveCaseId] = useState<string | null>(null);
 
