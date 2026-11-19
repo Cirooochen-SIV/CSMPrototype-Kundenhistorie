@@ -1,4 +1,4 @@
-import { CustomerEvent } from './types';
+import { CustomerEvent, CaseRow } from './types';
 
 export const mockEvents: CustomerEvent[] = [
   {
@@ -134,4 +134,23 @@ export const mockEvents: CustomerEvent[] = [
       { label: 'Lieferstelle', value: '19055 Schwerin, Alter Garten 47' },
     ],
   },
+];
+
+/* ===== Fallübersicht (Case Management) mock data ===== */
+
+export const mockCases: CaseRow[] = [
+  { id: 'SIV-1099', title: 'Dokument senden', customerName: 'Wilson Jenny', customerNumber: '2101300036', status: 'warten-auf', assignee: 'Anna Miller', createdAt: 'Gerade eben', dueAt: 'Morgen', kind: 'send-document' },
+  { id: 'SIV-1092', title: 'Kunde und Vertrag anlegen', customerName: 'Wilson Jenny', customerNumber: '2101300036', status: 'abgeschlossen', assignee: 'Anna Miller', createdAt: 'Weniger als 1 Stunde', dueAt: 'Morgen', kind: 'generic' },
+  { id: 'SIV-1201', title: 'Zählerablesung', customerName: 'Bumgarner, Clara', customerNumber: '2300018278', status: 'offen', assignee: 'Anna Miller', createdAt: 'Gerade eben', dueAt: 'Gestern', overdue: true, kind: 'generic' },
+  { id: 'SIV-1182', title: 'Zählerablesung', customerName: 'Hansen, David', customerNumber: '3000027101', status: 'offen', assignee: null, createdAt: 'Weniger als 1 Stunde', dueAt: 'Gestern', overdue: true, kind: 'generic' },
+  { id: 'SIV-1184', title: 'Zählerablesung', customerName: 'Ericsson, Martin', customerNumber: '1230023980', status: 'in-bearbeitung', assignee: 'Brigitte Eiffel', createdAt: '01.10.2025', dueAt: 'Morgen', kind: 'generic' },
+  { id: 'SIV-1090', title: 'Zählerablesung', customerName: 'Liebert, Anthon', customerNumber: '2800028002', status: 'in-bearbeitung', assignee: 'Anna Miller', createdAt: '26.09.2025', dueAt: 'Heute', kind: 'generic' },
+  { id: 'SIV-1012', title: 'Zählerablesung', customerName: 'Schmid, Matias', customerNumber: '2138301826', status: 'in-bearbeitung', assignee: 'Jenny Wilson', createdAt: '23.09.2025', dueAt: 'Heute', kind: 'generic' },
+  { id: 'SIV-1077', title: 'Zählerablesung', customerName: 'Wirtz, Niklas', customerNumber: '3872910832', status: 'offen', assignee: null, createdAt: '23.09.2025', dueAt: 'Heute', kind: 'generic' },
+  { id: 'SIV-1089', title: 'Zählerablesung', customerName: 'Bürger, Florian', customerNumber: '1977720932', status: 'abgeschlossen', assignee: null, createdAt: '23.09.2025', dueAt: 'Heute', kind: 'generic' },
+  { id: 'SIV-1396', title: 'Zählerablesung', customerName: 'Bieber, Katrin', customerNumber: '3222900234', status: 'geschlossen', assignee: null, createdAt: '23.09.2025', dueAt: 'Heute', kind: 'generic' },
+  { id: 'SIV-1381', title: 'Zählerablesung', customerName: 'Muller, Nadine', customerNumber: '1029883729', status: 'in-bearbeitung', assignee: 'Niklas Wirtz', createdAt: '20.09.2025', dueAt: 'Gestern', kind: 'generic' },
+  { id: 'SIV-1510', title: 'Zählerablesung', customerName: 'Weissmuller, Jan', customerNumber: '1928820300', status: 'in-bearbeitung', assignee: 'Jens Duerr', createdAt: '20.09.2025', dueAt: '02.10.2026', kind: 'generic' },
+  { id: 'SIV-1602', title: 'Zählerablesung', customerName: 'Hoffmann, Gabriel', customerNumber: '1000037200', status: 'in-bearbeitung', assignee: 'Anna Miller', createdAt: '20.09.2025', dueAt: '04.10.2026', kind: 'generic' },
+  { id: 'SIV-1225', title: 'Zählerablesung', customerName: 'Trommler, Eric', customerNumber: '520028003', status: 'in-bearbeitung', assignee: 'Brigitte Eiffel', createdAt: '20.09.2025', dueAt: '04.10.2026', kind: 'generic' },
 ];

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 
-const NAV_ITEMS = [
-  { icon: 'grid_view', label: 'Dashboard', active: true },
-  { icon: 'home_storage', label: 'Fallübersicht' },
+export type SidebarNav = 'dashboard' | 'falluebersicht';
+
+const NAV_ITEMS: { icon: string; label: string; nav: SidebarNav }[] = [
+  { icon: 'grid_view', label: 'Dashboard', nav: 'dashboard' },
+  { icon: 'home_storage', label: 'Fallübersicht', nav: 'falluebersicht' },
 ];
 
 const BOTTOM_NAV = [
@@ -21,7 +23,12 @@ function SidebarLogo() {
   );
 }
 
-export function Sidebar() {
+interface Props {
+  activeNav?: SidebarNav;
+  onNavigate?: (nav: SidebarNav) => void;
+}
+
+export function Sidebar({ activeNav = 'dashboard', onNavigate }: Props) {
   const [collapsed, setCollapsed] = useState(true);
 
   return (
@@ -64,13 +71,14 @@ export function Sidebar() {
             <span className="icon nav-extra">unfold_more</span>
           </div>
 
-          {NAV_ITEMS.map(({ icon, label, active }) => (
+          {NAV_ITEMS.map(({ icon, label, nav }) => (
             <button
               key={label}
-              className={`nav-item${active ? ' nav-item--active' : ''}`}
+              className={`nav-item${activeNav === nav ? ' nav-item--active' : ''}`}
               aria-label={label}
-              aria-current={active ? 'page' : undefined}
+              aria-current={activeNav === nav ? 'page' : undefined}
               data-tooltip={label}
+              onClick={() => onNavigate?.(nav)}
             >
               <div className="nav-icon-wrap">
                 <span className="icon">{icon}</span>

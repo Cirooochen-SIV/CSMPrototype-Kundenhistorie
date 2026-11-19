@@ -21,3 +21,23 @@ export interface CustomerEvent {
   details?: DetailRow[];
   isSystem: boolean;
 }
+
+/* ===== Case Management (Fallübersicht) ===== */
+
+export type CaseStatus = 'warten-auf' | 'offen' | 'in-bearbeitung' | 'abgeschlossen' | 'geschlossen';
+
+export type SendDocumentScenario = 'email' | 'post' | 'multi';
+
+export interface CaseRow {
+  id: string; // "SIV-1099"
+  title: string; // "Dokument senden"
+  customerName: string;
+  customerNumber: string;
+  status: CaseStatus;
+  assignee: string | null;
+  createdAt: string;
+  dueAt: string;
+  overdue?: boolean;
+  /** Only "send-document" cases have a fully implemented detail flow in this prototype. */
+  kind: 'send-document' | 'generic';
+}
